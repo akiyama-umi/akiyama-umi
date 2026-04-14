@@ -1,6 +1,8 @@
-## Hi there 👋
+## Hi there!
 
-This is Xiang Heyi/Akiyama Umi.
+This is **Xiang Heyi/Akiyama Umi**. 
+You can also call me **Sunflower**, which is a more commonly used nickname of mine. =)
+I'm a college student majoring in CS and currently exploring github ~
 
 <!--
 **akiyama-umi/akiyama-umi** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
