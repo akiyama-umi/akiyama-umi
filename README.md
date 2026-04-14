@@ -1,7 +1,7 @@
 ## Hi there!
 
-This is **Xiang Heyi/Akiyama Umi**. 
-You can also call me **Sunflower**, which is a more commonly used nickname of mine. =)
+This is **Xiang Heyi/Akiyama Umi**.  
+You can also call me **Sunflower**, which is a more commonly used nickname of mine. =)  
 I'm a college student majoring in CS and currently exploring github ~
 
 <!--
