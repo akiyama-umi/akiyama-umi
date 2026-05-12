@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- 设置字符编码为 UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- 设置视口以支持响应式设计（移动设备友好） -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 页面标题 -->
+    <title>我的个人主页</title>
+    <style>
+        /* ===== 全局样式 ===== */
+        * {
+            /* 重置所有元素的外边距和内边距 */
+            margin: 0;
+            padding: 0;
+            /* 使盒子模型计算更直观 */
+            box-sizing: border-box;
+        }
+
+        body {
+            /* 设置整体背景色为温暖的浅米黄 */
+            background-color: #faf6f1;
+            /* 设置字体为系统默认字体 */
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            /* 设置文字颜色为深色，易于阅读 */
+            color: #2c2c2c;
+            /* 设置行高，使文本更易读 */
+            line-height: 1.6;
+        }
+
+        /* ===== 导航栏样式 ===== */
+        nav {
+            /* 固定位置，始终在视口顶部 */
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            /* 设置堆叠顺序，确保导航栏在最上层 */
+            z-index: 1000;
+            /* 背景颜色为温暖的浅桃色，半透明 */
+            background-color: rgba(255, 228, 217, 0.95);
+            /* 圆角边框 */
+            border-radius: 10px;
+            /* 内边距 */
+            padding: 15px 25px;
+            /* 阴影效果，增加立体感 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 导航链接容器 */
+        nav ul {
+            /* 去掉列表默认的项目符号 */
+            list-style: none;
+            /* 使用 flex 布局进行水平排列 */
+            display: flex;
+            gap: 25px;
+        }
+
+        /* 导航链接样式 */
+        nav a {
+            /* 去掉链接默认的下划线 */
+            text-decoration: none;
+            /* 设置文字颜色为深色 */
+            color: #2c2c2c;
+            /* 设置字体大小 */
+            font-size: 16px;
+            /* 设置字重为中等 */
+            font-weight: 500;
+            /* 添加过渡效果，使颜色变化更平滑 */
+            transition: color 0.3s ease;
+        }
+
+        /* 导航链接悬停效果 */
+        nav a:hover {
+            /* 悬停时文字变为温暖的橙色 */
+            color: #e8996d;
+        }
+
+        /* ===== 内容区块样式 ===== */
+        section {
+            /* 设置最小高度为视口高度，使每个区块占满屏幕 */
+            min-height: 100vh;
+            /* 垂直方向和水平方向都居中 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* 内边距，提供内容与边界的距离 */
+            padding: 60px 30px;
+            /* 边框类型为顶部边框，用来区分不同区块 */
+            border-top: 1px solid #e8d4c8;
+        }
+
+        /* 内容容器 */
+        .content {
+            /* 设置最大宽度，防止文本过宽 */
+            max-width: 600px;
+            /* 水平居中 */
+            text-align: center;
+        }
+
+        /* 区块标题样式 */
+        section h2 {
+            /* 标题文字大小 */
+            font-size: 48px;
+            /* 标题下方间距 */
+            margin-bottom: 20px;
+            /* 标题文字颜色为深色 */
+            color: #2c2c2c;
+        }
+
+        /* 区块描述文本样式 */
+        section p {
+            /* 文字大小 */
+            font-size: 18px;
+            /* 文字颜色为灰色，比标题柔和 */
+            color: #5a5a5a;
+            /* 上下外边距 */
+            margin: 15px 0;
+        }
+
+        /* 不同区块的背景颜色 */
+        #home {
+            background-color: #faf6f1;
+        }
+
+        #about {
+            background-color: #fff5f0;
+        }
+
+        #projects {
+            background-color: #fffbf7;
+        }
+
+        #contact {
+            background-color: #fef9f6;
+        }
+
+        /* ===== 响应式设计 ===== */
+        @media (max-width: 768px) {
+            /* 在手机屏幕上，调整导航栏的位置和样式 */
+            nav {
+                /* 移到顶部 */
+                top: 0;
+                right: 0;
+                left: 0;
+                /* 充满屏幕宽度 */
+                width: 100%;
+                /* 不需要右上角位置，改为左上角 */
+                border-radius: 0;
+                padding: 10px 15px;
+            }
+
+            /* 手机屏幕上导航链接竖直排列 */
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            /* 调整导航链接的字体大小 */
+            nav a {
+                font-size: 14px;
+            }
+
+            /* 调整内容区块的样式 */
+            section {
+                min-height: auto;
+                padding: 40px 20px;
+            }
+
+            /* 调整标题大小 */
+            section h2 {
+                font-size: 32px;
+            }
+
+            /* 调整描述文本大小 */
+            section p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== 导航栏 ===== -->
+    <nav>
+        <ul>
+            <!-- 首页链接，点击时会滚动到 id 为 home 的元素 -->
+            <li><a href="#home">首页</a></li>
+            <!-- 关于我链接，点击时会滚动到 id 为 about 的元素 -->
+            <li><a href="#about">关于我</a></li>
+            <!-- 项目链接，点击时会滚动到 id 为 projects 的元素 -->
+            <li><a href="#projects">项目</a></li>
+            <!-- 联系链接，点击时会滚动到 id 为 contact 的元素 -->
+            <li><a href="#contact">联系</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===== 首页区块 ===== -->
+    <section id="home">
+        <div class="content">
+            <h2>欢迎来到我的主页</h2>
+            <p>这里是首页区域</p>
+            <p>点击上方导航栏的链接，可以平滑滚动到不同的区块</p>
+        </div>
+    </section>
+
+    <!-- ===== 关于我区块 ===== -->
+    <section id="about">
+        <div class="content">
+            <h2>关于我</h2>
+            <p>这里是关于我区域</p>
+            <p>你可以在这里介绍自己、分享个人经历或者兴趣爱好</p>
+        </div>
+    </section>
+
+    <!-- ===== 项目区块 ===== -->
+    <section id="projects">
+        <div class="content">
+            <h2>我的项目</h2>
+            <p>这里是项目区域</p>
+            <p>你可以在这里展示你的作品和项目成果</p>
+        </div>
+    </section>
+
+    <!-- ===== 联系区块 ===== -->
+    <section id="contact">
+        <div class="content">
+            <h2>联系我</h2>
+            <p>这里是联系区域</p>
+            <p>你可以在这里放上邮箱、社交媒体链接等联系方式</p>
+        </div>
+    </section>
+
+    <script>
+        /* ===== 平滑滚动功能 ===== */
+        // 获取所有导航链接
+        const navLinks = document.querySelectorAll('nav a');
+
+        // 为每个导航链接添加点击事件
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // 阻止默认的跳转行为
+                e.preventDefault();
+
+                // 获取链接指向的目标元素的 id（例如：#home）
+                const targetId = this.getAttribute('href').substring(1);
+                // 通过 id 找到对应的目标元素
+                const targetElement = document.getElementById(targetId);
+
+                // 如果目标元素存在，则执行平滑滚动
+                if (targetElement) {
+                    // 使用 scrollIntoView 方法进行平滑滚动
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',  // 平滑滚动动画
+                        block: 'start'       // 滚动到元素的顶部
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
