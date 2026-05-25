@@ -18,12 +18,12 @@
         }
 
         body {
-            /* 设置整体背景色为温暖的浅米黄 */
-            background-color: #faf6f1;
+            /* 【修改】设置整体背景色为深蓝色星空 */
+            background-color: #0f1419;
             /* 设置字体为系统默认字体 */
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
-            /* 设置文字颜色为深色，易于阅读 */
-            color: #2c2c2c;
+            /* 【修改】设置文字颜色为浅色（白色/浅蓝）以适应深色背景 */
+            color: #e8e8f0;
             /* 设置行高，使文本更易读 */
             line-height: 1.6;
         }
@@ -36,14 +36,16 @@
             right: 30px;
             /* 设置堆叠顺序，确保导航栏在最上层 */
             z-index: 1000;
-            /* 背景颜色为温暖的浅桃色，半透明 */
-            background-color: rgba(255, 228, 217, 0.95);
+            /* 【修改】背景颜色改为半透明深蓝色 */
+            background-color: rgba(25, 35, 55, 0.9);
             /* 圆角边框 */
             border-radius: 10px;
             /* 内边距 */
             padding: 15px 25px;
-            /* 阴影效果，增加立体感 */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            /* 【修改】阴影效果改为星光蓝色 */
+            box-shadow: 0 4px 15px rgba(100, 150, 200, 0.3), inset 0 0 20px rgba(100, 150, 200, 0.1);
+            /* 【修改】添加边框用星光蓝 */
+            border: 1px solid rgba(100, 150, 200, 0.3);
         }
 
         /* 导航链接容器 */
@@ -59,20 +61,22 @@
         nav a {
             /* 去掉链接默认的下划线 */
             text-decoration: none;
-            /* 设置文字颜色为深色 */
-            color: #2c2c2c;
+            /* 【修改】设置文字颜色为浅蓝色 */
+            color: #a0d0ff;
             /* 设置字体大小 */
             font-size: 16px;
             /* 设置字重为中等 */
             font-weight: 500;
             /* 添加过渡效果，使颜色变化更平滑 */
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
         }
 
         /* 导航链接悬停效果 */
         nav a:hover {
-            /* 悬停时文字变为温暖的橙色 */
-            color: #e8996d;
+            /* 【修改】悬停时文字变为更亮的星光蓝 */
+            color: #64b5f6;
+            /* 【修改】添加星光发光效果 */
+            text-shadow: 0 0 10px rgba(100, 181, 246, 0.6);
         }
 
         /* ===== 内容区块样式 ===== */
@@ -85,8 +89,8 @@
             justify-content: center;
             /* 内边距，提供内容与边界的距离 */
             padding: 60px 30px;
-            /* 边框类型为顶部边框，用来区分不同区块 */
-            border-top: 1px solid #e8d4c8;
+            /* 【修改】边框颜色改为星光蓝 */
+            border-top: 1px solid rgba(100, 150, 200, 0.2);
         }
 
         /* 内容容器 */
@@ -103,35 +107,79 @@
             font-size: 48px;
             /* 标题下方间距 */
             margin-bottom: 20px;
-            /* 标题文字颜色为深色 */
-            color: #2c2c2c;
+            /* 【修改】标题文字颜色为淡紫蓝色 */
+            color: #c8d5ff;
+            /* 【修改】添加文字阴影星光效果 */
+            text-shadow: 0 0 20px rgba(100, 150, 200, 0.4);
         }
 
         /* 区块描述文本样式 */
         section p {
             /* 文字大小 */
             font-size: 18px;
-            /* 文字颜色为灰色，比标题柔和 */
-            color: #5a5a5a;
+            /* 【修改】文字颜色为浅灰蓝色 */
+            color: #a8b8d0;
             /* 上下外边距 */
             margin: 15px 0;
         }
 
         /* 不同区块的背景颜色 */
         #home {
-            background-color: #faf6f1;
+            /* 【修改】背景改为深蓝色 */
+            background-color: #0f1419;
+            /* 【修改】添加星空渐变效果 */
+            background: linear-gradient(135deg, #0f1419 0%, #1a2540 50%, #0f1419 100%);
         }
 
         #about {
-            background-color: #fff5f0;
+            /* 【修改】背景改为深蓝色，略微偏紫 */
+            background-color: #151d32;
+            background: linear-gradient(135deg, #151d32 0%, #1e2d4d 50%, #151d32 100%);
         }
 
         #projects {
-            background-color: #fffbf7;
+            /* 【修改】背景改为深蓝色，略微偏青 */
+            background-color: #0f1419;
+            background: linear-gradient(135deg, #0f1419 0%, #1a3a50 50%, #0f1419 100%);
         }
 
         #contact {
-            background-color: #fef9f6;
+            /* 【修改】背景改为深蓝色 */
+            background-color: #151d32;
+            background: linear-gradient(135deg, #151d32 0%, #1a2d45 50%, #151d32 100%);
+        }
+
+        /* ===== 星星装饰效果（可选增强） ===== */
+        /* 在每个 section 后面添加星星背景 */
+        section::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            /* 【新增】创建星星点缀效果 */
+            background-image: 
+                radial-gradient(2px 2px at 20% 30%, #eee, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 60% 70%, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 50% 50%, #ddd, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 80% 10%, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 10% 80%, #eee, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 200% 200%;
+            pointer-events: none;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        section {
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
         }
 
         /* ===== 响应式设计 ===== */
